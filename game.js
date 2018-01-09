@@ -9,15 +9,20 @@ function addMonsters() {
 
     $('.game').append(monster)
     monster.animate({top: window.screen.height}, {
-      duration: 2000,
+      duration: Math.random() * (2000 - 1500) + 1500,
       easing: 'linear',
       complete: function() {
-        monster.remove()
+        monster.remove(),
         addMonsters()
       }
     })
 }
 
+function play() {
+    setTimeout(addMonsters, 3000)
+}
+
 $(document).ready(function() {
   addMonsters()
+  play()
 })
