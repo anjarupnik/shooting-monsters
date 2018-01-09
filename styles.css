@@ -1,3 +1,9 @@
+@media screen and (max-width: 500px) {
+    .container {
+      min-height: 100%;
+    }
+}
+
 .game {
   background-image: url('http://res.cloudinary.com/mdfchucknorris/image/upload/v1515496901/Creepy_uoi7nb.jpg');
   width: 1200px;
