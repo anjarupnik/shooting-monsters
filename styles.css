@@ -1,0 +1,14 @@
+#game {
+  background-image: url('http://res.cloudinary.com/mdfchucknorris/image/upload/v1515496901/Creepy_uoi7nb.jpg');
+  width: 1200px;
+  height: 600px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: black;
+}
