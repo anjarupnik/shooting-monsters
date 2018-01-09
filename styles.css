@@ -15,6 +15,7 @@
 
 body {
   background-color: black;
+  overflow: hidden;
 }
 
 .progress {
@@ -51,4 +52,10 @@ to {background-position: 20px 0;}
 }
 @keyframes stripes {
 to {background-position: 20px 0;}
+}
+
+img {
+  position: absolute;
+  height: 200px;
+  width: 200px;
 }
