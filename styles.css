@@ -22,6 +22,7 @@
 body {
   background-color: black;
   overflow: hidden;
+  cursor: none;
 }
 
 .progress {
@@ -64,4 +65,52 @@ img {
   position: absolute;
   height: 200px;
   width: 200px;
+}
+
+.game img {
+  -webkit-animation: turning 3s linear infinite;
+  -moz-animation: turning 3s linear infinite;
+  animation: turning 3s linear infinite;
+}
+@-webkit-keyframes turning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes turning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes turning {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.mouse {
+  z-index: 1;
+  color: red;
 }

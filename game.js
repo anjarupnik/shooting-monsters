@@ -9,7 +9,7 @@ function addMonsters() {
 
     $('.game').append(monster)
     monster.animate({top: window.screen.height}, {
-      duration: Math.random() * (2000 - 1500) + 1500,
+      duration: Math.random() * (2500 - 1500) + 1500,
       easing: 'linear',
       complete: function() {
         monster.remove(),
@@ -25,4 +25,8 @@ function play() {
 $(document).ready(function() {
   addMonsters()
   play()
+})
+
+$(document).mousemove(function(e){
+  $(".mouse").css({left:e.pageX, top:e.pageY});
 })
