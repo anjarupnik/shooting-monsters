@@ -72,6 +72,7 @@ img {
   -moz-animation: turning 3s linear infinite;
   animation: turning 3s linear infinite;
 }
+
 @-webkit-keyframes turning {
   from {
     -webkit-transform: rotate(0deg);
@@ -97,6 +98,7 @@ img {
     transform: rotate(360deg);
   }
 }
+
 @keyframes turning {
   from {
     -webkit-transform: rotate(0deg);
@@ -112,5 +114,9 @@ img {
 
 .mouse {
   z-index: 1;
-  color: red;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  cursor: none;
+  pointer-events: none;
 }

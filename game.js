@@ -1,7 +1,11 @@
 let points = 100
 
+function shoot () {
+  $('.monster').remove()
+}
+
 function addMonsters() {
-  const monster = $('<img src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
+  const monster = $('<img onClick="shoot()" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
   monster.css({
     top: '-200px',
     left: Math.floor(Math.random() * Math.floor(1000))
@@ -13,7 +17,7 @@ function addMonsters() {
       easing: 'linear',
       complete: function() {
         monster.remove(),
-        addMonsters()
+        play()
       }
     })
 }
@@ -28,5 +32,5 @@ $(document).ready(function() {
 })
 
 $(document).mousemove(function(e){
-  $(".mouse").css({left:e.pageX, top:e.pageY});
+  $(".mouse").show().css({left:e.clientX, top:e.clientY});
 })
