@@ -119,4 +119,5 @@ img {
   height: 80px;
   cursor: none;
   pointer-events: none;
+  transform: translate(-50%, -50%);
 }
