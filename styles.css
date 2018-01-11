@@ -160,3 +160,30 @@ to {background-position: 20px 0;}
     text-decoration: none;
     cursor: pointer;
 }
+
+#splash {
+  -webkit-animation: fadeOut 2s linear;
+  -moz-animation: fadeOut 2s linear;
+  animation: fadeOut 2s linear;
+}
+
+@-webkit-keyframes fadeOut {
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes fadeOut {
+  100% {
+    width: 0;
+    height: 0;
+  }
+}

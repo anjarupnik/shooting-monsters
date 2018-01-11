@@ -2,13 +2,14 @@ let points = 300
 let shooted = false
 let id = 0
 
-function shoot() {
-  this.remove()
+function shoot(event) {
+  this.src = 'http://moziru.com/images/green-clipart-10.gif'
+  this.id = "splash"
   shooted = true
 }
 
 function addMonsters() {
-  const monster = $('<img class="monster" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
+  const monster = $('<img class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
   monster.css({
     top: '-200px',
     left: Math.floor(Math.random() * Math.floor(1000))
