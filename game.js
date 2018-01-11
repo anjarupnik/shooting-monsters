@@ -1,13 +1,14 @@
 let points = 300
 let shooted = false
+let id = 0
 
-function shoot (event) {
-  $('.monster')[0].remove()
+function shoot() {
+  this.remove()
   shooted = true
 }
 
 function addMonsters() {
-  const monster = $('<img class="monster" onClick="shoot()" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
+  const monster = $('<img class="monster" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
   monster.css({
     top: '-200px',
     left: Math.floor(Math.random() * Math.floor(1000))
@@ -57,6 +58,7 @@ $(document).on('click','.modal',function () {
   addMonsters()
 })
 
+$(document).on('click', '.monster', shoot)
 
 $(document).ready(function() {
   addMonsters()
