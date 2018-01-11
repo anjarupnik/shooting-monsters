@@ -1,8 +1,8 @@
 let points = 300
 let shooted = false
 
-function shoot () {
-  $('.monster').remove()
+function shoot (event) {
+  $('.monster')[0].remove()
   shooted = true
 }
 
@@ -15,7 +15,7 @@ function addMonsters() {
 
     $('.game').append(monster)
     monster.animate({top: window.screen.height}, {
-      duration: Math.random() * (2500 - 1500) + 1500,
+      duration: Math.random() * (2000 - 1000) + 1000,
       easing: 'linear',
       complete: function() {
         monster.remove(),
@@ -41,7 +41,7 @@ function miss() {
 
 function play() {
   if (points >= 0) {
-    setTimeout(addMonsters, 3000)
+    setTimeout(addMonsters, 2000)
   }
 }
 
@@ -53,8 +53,8 @@ $(document).on('click','.close',function () {
   $('.modal').css({display: 'none'})
   points = 300
   $('.progress-bar').css({width: points})
-  addMonsters()
   play()
+  addMonsters()
 })
 
 $(document).ready(function() {
