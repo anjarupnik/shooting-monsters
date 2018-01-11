@@ -187,3 +187,9 @@ to {background-position: 20px 0;}
     height: 0;
   }
 }
+
+h1 {
+  font-size: 60px;
+  position: absolute;
+  margin-left: 20px;
+}

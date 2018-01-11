@@ -1,11 +1,23 @@
 let points = 300
 let shooted = false
-let id = 0
+let score = 0
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF'
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
 
 function shoot(event) {
   this.src = 'http://moziru.com/images/green-clipart-10.gif'
   this.id = "splash"
   shooted = true
+  score += 10
+  $('h1').css({color: getRandomColor()})
+  $('h1').html(score)
 }
 
 function addMonsters() {
@@ -54,6 +66,8 @@ function gameOver() {
 $(document).on('click','.modal',function () {
   $('.modal').css({display: 'none'})
   points = 300
+  score = 0
+  $('h1').html(score)
   $('.progress-bar').css({width: points})
   play()
   addMonsters()
