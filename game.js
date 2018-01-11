@@ -33,13 +33,14 @@ function miss() {
     progressBar.css({
       width: points
     })
+    if (points === 0) {
+      gameOver()
+    }
   }
 }
 
 function play() {
-  if (points === 50) {
-    gameOver()
-  } else {
+  if (points != 0) {
     setTimeout(addMonsters, 3000)
   }
 }
@@ -52,6 +53,7 @@ $(document).on('click','.close',function () {
   $('.modal').css({display: 'none'})
   points = 300
   $('.progress-bar').css({width: points})
+  play()
 })
 
 $(document).ready(function() {
