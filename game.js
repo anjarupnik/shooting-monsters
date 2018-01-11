@@ -7,7 +7,7 @@ function shoot () {
 }
 
 function addMonsters() {
-  const monster = $('<img onClick="shoot()" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
+  const monster = $('<img class="monster" onClick="shoot()" class="monster" src="http://res.cloudinary.com/mdfchucknorris/image/upload/v1515508131/Mikey_rlpj99.png" alt="monsters">')
   monster.css({
     top: '-200px',
     left: Math.floor(Math.random() * Math.floor(1000))
@@ -40,7 +40,7 @@ function miss() {
 }
 
 function play() {
-  if (points != 0) {
+  if (points >= 0) {
     setTimeout(addMonsters, 3000)
   }
 }
@@ -53,6 +53,7 @@ $(document).on('click','.close',function () {
   $('.modal').css({display: 'none'})
   points = 300
   $('.progress-bar').css({width: points})
+  addMonsters()
   play()
 })
 
