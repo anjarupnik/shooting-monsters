@@ -1,7 +1,9 @@
-let points = 100
+let points = 300
+let shooted = false
 
 function shoot () {
   $('.monster').remove()
+  shooted = true
 }
 
 function addMonsters() {
@@ -17,9 +19,21 @@ function addMonsters() {
       easing: 'linear',
       complete: function() {
         monster.remove(),
-        play()
+        play(),
+        miss(),
+        shooted = false
       }
     })
+}
+
+function miss() {
+  const progressBar = $('.progress-bar')
+  if (shooted === false) {
+    points -= 20
+    progressBar.css({
+      width: points
+    })
+  }
 }
 
 function play() {
