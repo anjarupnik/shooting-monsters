@@ -49,13 +49,14 @@ function gameOver() {
   $('.modal').css({display: 'block'})
 }
 
-$(document).on('click','.close',function () {
+$(document).on('click','.modal',function () {
   $('.modal').css({display: 'none'})
   points = 300
   $('.progress-bar').css({width: points})
   play()
   addMonsters()
 })
+
 
 $(document).ready(function() {
   addMonsters()
