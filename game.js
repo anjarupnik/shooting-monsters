@@ -15,7 +15,7 @@ function addMonsters() {
 
     $('.game').append(monster)
     monster.animate({top: window.screen.height}, {
-      duration: Math.random() * (2000 - 1000) + 1000,
+      duration: Math.random() * (2000 - 1200) + 1200,
       easing: 'linear',
       complete: function() {
         monster.remove(),
