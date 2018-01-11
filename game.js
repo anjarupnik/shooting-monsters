@@ -1,22 +1,11 @@
 let points = 300
-let shooted = false
 let score = 0
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF'
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
-
 function shoot(event) {
+  if (this.id === 'splash') {return null}
   this.src = 'http://moziru.com/images/green-clipart-10.gif'
   this.id = "splash"
-  shooted = true
   score += 10
-  $('h1').css({color: getRandomColor()})
   $('h1').html(score)
 }
 
@@ -34,15 +23,14 @@ function addMonsters() {
       complete: function() {
         monster.remove(),
         play(),
-        miss(),
-        shooted = false
+        miss(monster)
       }
     })
 }
 
-function miss() {
+function miss(monster) {
   const progressBar = $('.progress-bar')
-  if (shooted === false) {
+  if (monster[0].id != 'splash') {
     points -= 50
     progressBar.css({
       width: points
@@ -55,7 +43,7 @@ function miss() {
 
 function play() {
   if (points >= 0) {
-    setTimeout(addMonsters, 2000)
+    setTimeout(addMonsters, 1000)
   }
 }
 

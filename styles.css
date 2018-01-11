@@ -191,5 +191,8 @@ to {background-position: 20px 0;}
 h1 {
   font-size: 60px;
   position: absolute;
-  margin-left: 20px;
+  margin-left: 25px;
+  margin-top: 0px;
+  color: rgb(244, 66, 66)
+
 }
