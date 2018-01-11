@@ -29,7 +29,7 @@ function addMonsters() {
 function miss() {
   const progressBar = $('.progress-bar')
   if (shooted === false) {
-    points -= 20
+    points -= 50
     progressBar.css({
       width: points
     })
@@ -37,7 +37,11 @@ function miss() {
 }
 
 function play() {
+  if (points === 0) {
+    window.alert('Game Over')
+  }else {
     setTimeout(addMonsters, 3000)
+  }
 }
 
 $(document).ready(function() {
