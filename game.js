@@ -37,12 +37,22 @@ function miss() {
 }
 
 function play() {
-  if (points === 0) {
-    window.alert('Game Over')
-  }else {
+  if (points === 50) {
+    gameOver()
+  } else {
     setTimeout(addMonsters, 3000)
   }
 }
+
+function gameOver() {
+  $('.modal').css({display: 'block'})
+}
+
+$(document).on('click','.close',function () {
+  $('.modal').css({display: 'none'})
+  points = 300
+  $('.progress-bar').css({width: points})
+})
 
 $(document).ready(function() {
   addMonsters()
