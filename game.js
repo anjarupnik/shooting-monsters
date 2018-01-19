@@ -43,7 +43,7 @@ function miss(monster) {
 
 function play() {
   if (points >= 0) {
-    setTimeout(addMonsters, 1000)
+    setTimeout(addMonsters, 1700)
   }
 }
 
